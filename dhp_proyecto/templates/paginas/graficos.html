@@ -1,138 +1,142 @@
-{% extends "base2.html" %}
-
-{% block titulo %} Graficos resumen | Indice de contratacion de personas con discapacidad {% endblock%}
-
-{% block contenido %}
+{% extends "base.html" %} {% block titulo %} Graficos resumen | Indice de
+contratacion de personas con discapacidad {% endblock%} {% block contenido %}
 <div class="container-fluid bg-secondary bg-gradient">
-    <div class="row">
-        <div class="col-3">
-            <br>
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Explicacion grafico por sexo</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-text" align="justify">
-                        El grafico evidencia la tasa de participación por sexo para las personas
-                        con discapacidad y sin discapacidad. Dicha tasa es mayor para los hombres
-                        independientemente de su situacion; sin embargo, la brecha de participacion
-                        laboral entre hombres y mujeres es mayor entre las personas sin discapacidad.
-                    </p>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-3">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Explicacion grafico por sexo</h4>
         </div>
-        <div class="col-9">
-            <br>
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Tasa de participación laboral por sexo, comparativo entre
-                        personas con y sin discapacidad
-                    </h4>
-                </div>
-                <div class="cardbody">
-                    <div>
-                        <canvas id="myChart"></canvas>
-                    </div>
-                      
-                      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                      
-                      <script>
-                        const ctx = document.getElementById('myChart');
-                      
-                        new Chart(ctx, {
-                          type: 'bar',
-                          data: {
-                            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                            datasets: [{
-                              label: 'Prueba etiqueta',
-                              data: [12, 19, 3, 5, 2, 3],
-                              backgroundColor: [
-                                'rgba(255, 99, 132, 0.5)',
-                                'rgba(54, 162, 235, 0.5)',
-                                'rgba(255, 206, 86, 0.5)',
-                                'rgba(75, 192, 192, 0.5)',
-                                'rgba(153, 102, 255, 0.5)',
-                                'rgba(255, 159, 64, 0.5)'
-                              ],
-                              borderWidth: 1
-                            }]
-                          },
-                          options: {
-                            scales: {
-                              y: {
-                                beginAtZero: true
-                              }
-                            }
-                          }
-                        });
-                      </script>
-                </div>
-            </div>
+        <div class="card-body">
+          <p class="card-text" align="justify">
+            El grafico evidencia la tasa de participación por sexo para las
+            personas con discapacidad y sin discapacidad. Dicha tasa es mayor
+            para los hombres independientemente de su situacion; sin embargo, la
+            brecha de participacion laboral entre hombres y mujeres es mayor
+            entre las personas sin discapacidad.
+          </p>
         </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-3">
-            <br>
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Sintesis del grafico</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-text" align="justify">
-                        El grafico contiene las tasas de participación laboral por tipo de discapacidad
-                        y para la población sin discapacidad. Aunque los datos son poco precisos, con
-                        margenes de error entre el 8 y 10%, sugieren que la población con discapacidad
-                        mental o psicologica e intelectual son las que experimentan un grado mucho mayor
-                        de exclusión laboral.
-                    </p>
-                </div>
-            </div>
+    <div class="col-9">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            Tasa de participación laboral por sexo, comparativo entre personas
+            con y sin discapacidad
+          </h4>
         </div>
-        <div class="col-9">
-            <br>
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Participacion laboral por tipo de discapacidad
-                    </h4>
-                </div>
-                <div class="card-body">
-                    <div>
-                        <canvas id="Barras2"></canvas>
-                    </div>
-                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                    <script>
-                        const cts = document.getElementById('Barras2');
-        
-                        new Chart(cts,{
-                            type: 'bar',
-                            data:{
-                                labels:['uno','dos','tres'],
-                                datasets:[{
-                                    label:'probando2',
-                                    data:[5,10,15],
-                                    backgroundColor: [
-                                        'rgba(255, 99, 132, 0.5)',
-                                        'rgba(54, 162, 235, 0.5)',
-                                        'rgba(255, 206, 86, 0.5)',
-                                    ],
-                                    borderWidth:1
-                                }]
-                            },
-                            options:{
-                                indexAxis: 'y',
-                                scales:{
-                                    y:{
-                                        beginAtZero:true
-                                    }
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-            </div>
+        <div class="cardbody">
+          <div>
+            <canvas id="myChart"></canvas>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+          <script>
+            const ctx = document.getElementById("myChart");
+
+            new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [
+                  {
+                    label: "Prueba etiqueta",
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                      "rgba(255, 99, 132, 0.5)",
+                      "rgba(54, 162, 235, 0.5)",
+                      "rgba(255, 206, 86, 0.5)",
+                      "rgba(75, 192, 192, 0.5)",
+                      "rgba(153, 102, 255, 0.5)",
+                      "rgba(255, 159, 64, 0.5)",
+                    ],
+                    borderWidth: 1,
+                  },
+                ],
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              },
+            });
+          </script>
         </div>
+      </div>
     </div>
-    <br>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Sintesis del grafico</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text" align="justify">
+            El grafico contiene las tasas de participación laboral por tipo de
+            discapacidad y para la población sin discapacidad. Aunque los datos
+            son poco precisos, con margenes de error entre el 8 y 10%, sugieren
+            que la población con discapacidad mental o psicologica e intelectual
+            son las que experimentan un grado mucho mayor de exclusión laboral.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-9">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            Participacion laboral por tipo de discapacidad
+          </h4>
+        </div>
+        <div class="card-body">
+          <div>
+            <canvas id="Barras2"></canvas>
+          </div>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <script>
+            const cts = document.getElementById("Barras2");
+
+            new Chart(cts, {
+              type: "bar",
+              data: {
+                labels: ["uno", "dos", "tres"],
+                datasets: [
+                  {
+                    label: "probando2",
+                    data: [5, 10, 15],
+                    backgroundColor: [
+                      "rgba(255, 99, 132, 0.5)",
+                      "rgba(54, 162, 235, 0.5)",
+                      "rgba(255, 206, 86, 0.5)",
+                    ],
+                    borderWidth: 1,
+                  },
+                ],
+              },
+              options: {
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
 </div>
 
 {% endblock%}

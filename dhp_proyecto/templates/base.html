@@ -1,40 +1,94 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>{% block titulo %} {% endblock%}</title>
+    {%load static%}
+    <script type="text/JavaScript" src="{% static 'chart.min.js' %}"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <title>{% block titulo %} {% endblock%}</title>
-  {%load static%}
-  <script type="text/JavaScript" src="{% static 'chart.min.js' %}"></script>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/normalize.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/publicacion.css'%}" />
+  </head>
 
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-</head>
-
-<body>
+  <body>
     <nav class="navbar sticky-top navbar-expand navbar-dark bg-dark">
-        <div class="nav navbar-nav prueba">
-            <a class="nav-item nav-link active" href="{% url 'inicio' %}" aria-current="page">Inicio</a>
-            <a class="nav-item nav-link active" href="{% url 'tablas' %}" aria-current="page">Tablas</a>
-            <a class="nav-item nav-link active" href="{% url 'graficos' %}" aria-current="page">Graficos</a>
-            <a class="nav-item nav-link active" href="#" aria-current="page">Resumen</a>
-        </div>
+      <div class="nav navbar-nav prueba">
+        <a
+          class="nav-item nav-link active"
+          href="{% url 'inicio' %}"
+          aria-current="page"
+          >Inicio</a
+        >
+        <a
+          class="nav-item nav-link active"
+          href="{% url 'tablas' %}"
+          aria-current="page"
+          >Tablas</a
+        >
+        <a
+          class="nav-item nav-link active"
+          href="{% url 'graficos' %}"
+          aria-current="page"
+          >Graficos</a
+        >
+        <a
+          class="nav-item nav-link active"
+          href="{% url 'publicacion' %}"
+          aria-current="page"
+          >Resumen</a
+        >
+      </div>
     </nav>
 
     {% block contenido %} {% endblock%}
 
+    <div>
+      <footer>
+        <div>
+          <img src="{% static '/img/ues.jpg'%}" />
+        </div>
+        <div>
+          <img src="{% static '/img/eisi.jpg'%}" />
+        </div>
+        <div>
+          Impulsado por:
+          <p>Martín Joel Cruz Orellana</p>
+          <p>Martín Joel Cruz Orellana</p>
+          <p>Martín Joel Cruz Orellana</p>
+        </div>
+        <div>
+          Contactos:
+          <p>Email: co20002@ues.edu.sv</p>
+          <p>Email: co20002@ues.edu.sv</p>
+          <p>Email: co20002@ues.edu.sv</p>
+        </div>
+      </footer>
+    </div>
+
     <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-</script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-  integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-</script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

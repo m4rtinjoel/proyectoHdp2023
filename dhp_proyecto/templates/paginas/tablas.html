@@ -1,93 +1,91 @@
-{% extends "base2.html" %}
-
-{% block titulo %} Tablas resumen | Indice de contratacion de personas con discapacidad {% endblock%}
-
-{% block contenido %}
+{% extends "base.html" %} {% block titulo %} Tablas resumen | Indice de
+contratacion de personas con discapacidad {% endblock%} {% block contenido %}
 <div class="container-fluid bg-secondary bg-gradient">
-    <div class="row">
-        <div class="col-9">
-            <br>
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Actividad Economica</h4>
-                </div>
-                <div class="card-body">
-                    
-                    <div class="table-responsive">
-                        <table class="table table-striped table-dark">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>id</th>
-                                    <th>Tipo de discapacidad</th>
-                                    <th>Estado</th>
-                                    <th>Cantidad</th>
-                                    <th>Porcentaje</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>        
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-9">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Actividad Economica</h4>
         </div>
-        <div class="col-3">
-            <br>
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title"> Detalles</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-text" align="justify">
-                        Se muestra la condicion de actividad economica de las personas por tipo de discapacidad.
-                        La mayor participación laboral se da en las personas con discapacidad visual, donde 
-                        59.4% son economicamente activas. Les siguen las personas con discapacidad fisica en las
-                        que 53.6% participan de la actividad economica.
-                    </p>
-                </div>
-            </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped table-dark">
+              <thead class="thead-dark">
+                <tr>
+                  <th>id</th>
+                  <th>Tipo de discapacidad</th>
+                  <th>Estado</th>
+                  <th>Cantidad</th>
+                  <th>Porcentaje</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-9">
-            <br>
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Por Categoria De Dificultad</h4>
-                </div>
-
-                <div class="card-body">
-
-                    <div class="table-responsive">
-                        <table class="table table-striped table-dark">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>id</th>
-                                    <th>Estado Economico<th>
-                                    <th>Situacion de discapacidad</th>
-                                    <th>Cantidad</th>
-                                    <th>Porcentaje</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div class="col-3">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Detalles</h4>
         </div>
-        <div class="col-3">
-            <br>
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Detalles</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-text" align="justify">
-                        Se puede ver las tasas de ocupación por situación de discapacidad. Para las personas de 18 a
-                        59 años sin discapacidad, la ocupación es de 64%; mientras que para las personas con discapacidad
-                        es de 48%. Esta es una brecha del 16%
-                    </p>
-                </div>
-            </div>
+        <div class="card-body">
+          <p class="card-text" align="justify">
+            Se muestra la condicion de actividad economica de las personas por
+            tipo de discapacidad. La mayor participación laboral se da en las
+            personas con discapacidad visual, donde 59.4% son economicamente
+            activas. Les siguen las personas con discapacidad fisica en las que
+            53.6% participan de la actividad economica.
+          </p>
         </div>
+      </div>
     </div>
-    <br>
+  </div>
+  <div class="row">
+    <div class="col-9">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Por Categoria De Dificultad</h4>
+        </div>
+
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped table-dark">
+              <thead class="thead-dark">
+                <tr>
+                  <th>id</th>
+                  <th>Estado Economico</th>
+                  <th></th>
+                  <th>Situacion de discapacidad</th>
+                  <th>Cantidad</th>
+                  <th>Porcentaje</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <br />
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Detalles</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text" align="justify">
+            Se puede ver las tasas de ocupación por situación de discapacidad.
+            Para las personas de 18 a 59 años sin discapacidad, la ocupación es
+            de 64%; mientras que para las personas con discapacidad es de 48%.
+            Esta es una brecha del 16%
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
 </div>
 {% endblock%}
