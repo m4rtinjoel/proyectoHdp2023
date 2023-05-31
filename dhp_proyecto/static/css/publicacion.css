@@ -1,0 +1,73 @@
+body {
+  font-family: Geneva, Tahoma, sans-serif;
+}
+h1 {
+  text-align: center;
+}
+.publicacion {
+  box-sizing: content-box;
+  margin: 0 auto;
+  background-color: rgba(78, 104, 141, 0.2);
+}
+
+.articulo {
+  margin: 0 auto;
+  border-bottom: 4px dotted black;
+  margin-bottom: 20px;
+}
+
+.articulo img {
+  width: 360px;
+  height: 350px;
+  display: block;
+  margin: 0 auto;
+}
+
+.articulo h3 {
+  text-align: center;
+}
+.articulo p {
+  text-align: justify;
+  width: 360px;
+  margin: 0 auto;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer div {
+  margin: 0 auto;
+  padding: 15px;
+}
+footer img {
+  width: 200px;
+  height: 230px;
+}
+@media screen and (min-width: 800px) {
+  .publicacion {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .articulo {
+    width: 600px;
+    margin: 30px auto;
+    border: 4px dotted rgb(191, 134, 29);
+    border-radius: 5%;
+  }
+
+  .articulo img {
+    width: 500px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .articulo p {
+    text-align: justify;
+    width: 500px;
+    margin: 25px auto;
+  }
+}
