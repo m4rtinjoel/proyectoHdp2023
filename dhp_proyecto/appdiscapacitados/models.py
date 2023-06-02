@@ -8,6 +8,14 @@ class Autor(models.Model):
     correo=models.EmailField(max_length=25, null= False)
     estado_autor=models.BooleanField(null=False)
 
+    def __str__(self):
+      return self.nombre
+    
+    class Meta:
+        verbose_name='Autor'
+        verbose_name_plural='Autores'
+        ordering=['nombre']
+
 class Resumen(models.Model):
     id_resumen=models.AutoField(primary_key=True, null=False ,unique=True)
     id_autor=models.ForeignKey(Autor, on_delete=models.CASCADE, null=False)
@@ -15,10 +23,26 @@ class Resumen(models.Model):
     referencias=models.CharField(max_length=1000, null=False)
     estado=models.BooleanField(null=False)
 
+    def __str__(self):
+        return self.sintesis
+    
+    class Meta:
+        verbose_name='Resumen'
+        verbose_name='Resumenes'
+        ordering=['sintesis']
+
 class Categoria(models.Model):
     id_categoria=models.AutoField(primary_key=True, null=False, unique=True)
     nombre_categoria=models.CharField(max_length=60, null=False)
     estado_categoria=models.BooleanField( null=False)
+
+    def __srt__(self):
+        return self.nombre_categoria
+    
+    class Meta:
+        verbose_name='Categoria'
+        verbose_name='Categorias'
+        ordering=['nombre_categoria']
 
 class Publicacion(models.Model):
     id_publicacion=models.AutoField(primary_key=True, null=False, unique=True)
@@ -30,12 +54,28 @@ class Publicacion(models.Model):
     descripcion_publicacion=models.CharField(max_length=2000, null=False)
     fecha_creacion=models.DateField( null=False)
 
+    def __str__(self):
+        return self.titulo_publicacion
+
+    class Meta:
+        verbose_name='Publicacion'
+        verbose_name='Publicaciones'
+        ordering=['titulo_publicacion']
+
 class Tablas(models.Model):
     id_tablas=models.AutoField(primary_key=True, null=False, unique=True)
     id_autor=models.ForeignKey(Autor, on_delete=models.CASCADE, null=False)
     id_categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE, null=False)
     tipo=models.CharField(max_length=40, null=False)
     descripcion_tabla=models.CharField(max_length=200, null=False)
+
+    def __str__(self):
+        return self.tipo
+
+    class Meta:
+        verbose_name='Tabla'
+        verbose_name='Tablas'
+        ordering=['tipo']
 
 class CondicionEconomicaPorDiscapacidad(models.Model):
     id_condicion=models.AutoField(primary_key=True, null=False, unique=True)
@@ -45,6 +85,14 @@ class CondicionEconomicaPorDiscapacidad(models.Model):
     cantidad_condicion=models.IntegerField(null=False)
     porcentaje_economica=models.CharField(max_length=5, null=False)
 
+    def __str__(self):
+        return self.tipo_discapacidad
+
+    class Meta:
+        verbose_name='Condicion Economica por discapacidad'
+        verbose_name='Condicion Economica por discapacidad'
+        ordering=['tipo_discapacidad']
+
 class CondicionActividadEconomica(models.Model):
     id_actividad=models.AutoField(primary_key=True, null=False, unique=True)
     id_tablas=models.ForeignKey(Tablas, on_delete=models.CASCADE,null=False)
@@ -53,12 +101,28 @@ class CondicionActividadEconomica(models.Model):
     cantidad=models.IntegerField(null=False)
     porcentaje=models.CharField(max_length=5, null=False)
 
+    def __str__(self):
+        return self.estado_economico
+    
+    class Meta:
+        verbose_name='Condicion Actividad Economica'
+        verbose_name='Condicion Actividad Economica'
+        ordering=['estado_economico']
+
 class InformacionGrafica(models.Model):
     id_grafica=models.AutoField(primary_key=True, null=False, unique=True)
     id_autor=models.ForeignKey(Autor, on_delete=models.CASCADE, null=False)
     id_categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE, null=False)
     titulo=models.CharField(max_length=50, null=False)
     fecha_creacion=models.DateField(null=False)
+
+    def __str__(self):
+        return self.titulo
+
+    class Meta:
+        verbose_name='Informacion gráfica'
+        verbose_name='Información gráfica'
+        ordering=['titulo']
 
 class DiscapacitadoPorGenero(models.Model):
     id_discapacidad=models.AutoField(primary_key=True, null=False, unique=True)
@@ -67,8 +131,24 @@ class DiscapacitadoPorGenero(models.Model):
     estado_discapacitado=models.CharField(max_length=40, null=False)
     porcentaje_discapacidad=models.CharField(max_length=5, null=False)
 
+    def __str__(self):
+        return self.genero
+
+    class Meta:
+        verbose_name='Discapacitado Por Genero'
+        verbose_name='Discapacitado Por Genero'
+        ordering=['genero']
+
 class ParticipacionPorDiscapacidad(models.Model):
     id_participacion=models.AutoField(primary_key=True, null=False, unique=True)
     id_grafica=models.ForeignKey(InformacionGrafica, on_delete=models.CASCADE, null=False)
     tipo_discapacidad=models.CharField(max_length=50, null=False)
     porcentaje_participacion=models.CharField(max_length=5, null=False)
+
+    def __str__(self):
+        return self.tipo_discapacidad
+
+    class Meta:
+        verbose_name='Participacion Por Discapacidad'
+        verbose_name='Participacion Por Discapacidad'
+        ordering=['tipo_discapacidad']
