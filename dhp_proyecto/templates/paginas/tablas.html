@@ -20,6 +20,17 @@ contratacion de personas con discapacidad {% endblock%} {% block contenido %}
                   <th>Porcentaje</th>
                 </tr>
               </thead>
+              <tbody>
+                {%for dato in datos1%}
+                <tr>
+                  <td>{{dato.id_condicion}}</td>
+                  <td>{{dato.tipo_discapacidad}}</td>
+                  <td>{{dato.estado_discapacidad}}</td>
+                  <td>{{dato.cantidad_condicion}}</td>
+                  <td>{{dato.porcentaje_economica}}</td>
+                </tr>
+                {%endfor%}
+              </tbody>
             </table>
           </div>
         </div>
@@ -64,6 +75,18 @@ contratacion de personas con discapacidad {% endblock%} {% block contenido %}
                   <th>Porcentaje</th>
                 </tr>
               </thead>
+              <tbody>
+                {%for dato in datos2%}
+                <tr>
+                  <td>{{dato.id_actividad}}</td>
+                  <td>{{dato.estado_economico}}</td>
+                  <td></td>
+                  <td>{{dato.situacion_economica}}</td>
+                  <td>{{dato.cantidad}}</td>
+                  <td>{{dato.porcentaje}}</td>
+                </tr>
+                {%endfor%}
+              </tbody>
             </table>
           </div>
         </div>

@@ -41,20 +41,23 @@ contratacion de personas con discapacidad {% endblock%} {% block contenido %}
             new Chart(ctx, {
               type: "bar",
               data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: [ {{ nombres1|safe }} ],
                 datasets: [
                   {
-                    label: "Prueba etiqueta",
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: "Femenino",
+                    data: [ {{dat1}} ],
                     backgroundColor: [
                       "rgba(255, 99, 132, 0.5)",
+                      "rgba(255, 99, 132, 0.5)",
                       "rgba(54, 162, 235, 0.5)",
-                      "rgba(255, 206, 86, 0.5)",
-                      "rgba(75, 192, 192, 0.5)",
-                      "rgba(153, 102, 255, 0.5)",
-                      "rgba(255, 159, 64, 0.5)",
+                      "rgba(54, 162, 235, 0.5)",
                     ],
-                    borderWidth: 1,
+                  },
+                  {
+                    label:"Masculino",
+                    backgroundColor:[
+                      "rgba(54, 162, 235, 0.5)",
+                    ],
                   },
                 ],
               },
@@ -108,14 +111,17 @@ contratacion de personas con discapacidad {% endblock%} {% block contenido %}
             new Chart(cts, {
               type: "bar",
               data: {
-                labels: ["uno", "dos", "tres"],
+                labels: [{{nombres2|safe}}],
                 datasets: [
                   {
-                    label: "probando2",
-                    data: [5, 10, 15],
+                    label:"datos en porcentaje",
+                    data: [{{dat2}}],
                     backgroundColor: [
-                      "rgba(255, 99, 132, 0.5)",
-                      "rgba(54, 162, 235, 0.5)",
+                      "rgba(255, 206, 86, 0.5)",
+                      "rgba(255, 206, 86, 0.5)",
+                      "rgba(255, 206, 86, 0.5)",
+                      "rgba(255, 206, 86, 0.5)",
+                      "rgba(255, 206, 86, 0.5)",
                       "rgba(255, 206, 86, 0.5)",
                     ],
                     borderWidth: 1,
