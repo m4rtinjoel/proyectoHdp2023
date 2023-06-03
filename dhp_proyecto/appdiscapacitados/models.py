@@ -35,7 +35,7 @@ class Publicacion(models.Model):
     categoria=models.ForeignKey(Categoria,on_delete=models.CASCADE, null=False)
     titulo_publicacion=models.CharField(max_length=60, null=False)
     estado_publicacion=models.BooleanField('Activo/No Activo',null=False,default=True)
-    imagen=models.ImageField(upload_to='publicaciones/',null=True)
+    imagen=models.ImageField(upload_to='publicaciones/',null=True,blank=True)
     descripcion_publicacion=models.CharField(max_length=2000, null=False)
     fecha_creacion=models.DateField( null=False)
 
@@ -92,7 +92,7 @@ class CondicionActividadEconomica(models.Model):
     class Meta:
         verbose_name='Condicion Actividad Economica'
         verbose_name_plural='Condicion Actividad Economica'
-        ordering=['estado_economico']
+        
 
 class InformacionGrafica(models.Model):
     id_grafica=models.AutoField(primary_key=True, null=False, unique=True)
@@ -107,7 +107,7 @@ class InformacionGrafica(models.Model):
     class Meta:
         verbose_name='Informacion gráfica'
         verbose_name_plural='Información gráfica'
-        ordering=['titulo']
+        
 
 class DiscapacitadoPorGenero(models.Model):
     id_discapacidad=models.AutoField(primary_key=True, null=False, unique=True)
@@ -122,7 +122,7 @@ class DiscapacitadoPorGenero(models.Model):
     class Meta:
         verbose_name='Discapacitado Por Genero'
         verbose_name_plural='Discapacitado Por Genero'
-       
+        ordering=['genero']
 
 class ParticipacionPorDiscapacidad(models.Model):
     id_participacion=models.AutoField(primary_key=True, null=False, unique=True)
@@ -136,4 +136,4 @@ class ParticipacionPorDiscapacidad(models.Model):
     class Meta:
         verbose_name='Participacion Por Discapacidad'
         verbose_name_plural='Participacion Por Discapacidad'
-        
+        ordering=['tipo_discapacidad']
