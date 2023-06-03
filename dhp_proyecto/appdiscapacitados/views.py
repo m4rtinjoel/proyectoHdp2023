@@ -1,12 +1,16 @@
 from django.shortcuts import render
+from .models import Publicacion
 from .models import CondicionEconomicaPorDiscapacidad
 from .models import CondicionActividadEconomica
 from .models import DiscapacitadoPorGenero
 from .models import ParticipacionPorDiscapacidad
 
+
 # Create your views here.
-def Publicacion(request):
-    return render(request,'paginas/publicacion.html')
+def publicacion(request):
+    publicaciones=Publicacion.objects.all()
+    return render(request,'paginas/publicacion.html',{'publicaciones':publicaciones})
+
 
 def inicio(request):
     return render(request, 'paginas/inicio.html')

@@ -3,7 +3,6 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Autor)
-admin.site.register(Resumen)
 admin.site.register(Categoria)
 admin.site.register(Publicacion)
 admin.site.register(Tablas)

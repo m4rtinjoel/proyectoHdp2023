@@ -3,70 +3,12 @@ discapacitados {% endblock%} {%block contenido %}
 <h1>Notas sobre empresas que contratan a personas discapacitas</h1>
 
 <div class="publicacion">
+  {%load static%} {%for publicacion in publicaciones%}
   <div class="articulo">
-    {%load static%}
-    <img src="{% static 'img/torre.jpg'%}" />
-    <h3>Discapacidad</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur,
-      magnam libero quas a rem velit? Provident a ab, pariatur neque sapiente
-      similique totam recusandae, nisi exercitationem repellendus perferendis.
-      Nemo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-      labore asperiores cum sapiente facilis? Sed ipsum praesentium alias
-      tempore consequatur consectetur, cumque vel temporibus veritatis nemo sunt
-      nostrum labore ipsa. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Dolor veniam alias, qui a blanditiis molestias rerum assumenda
-      obcaecati atque aperiam magnam maiores quae ea reprehenderit, quis
-      veritatis placeat, deserunt cumque. Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Rerum at numquam voluptatibus enim ipsum,
-      explicabo, maiores sed inventore maxime sit cupiditate pariatur quidem
-      neque commodi quos quasi placeat iure autem?Lorem ipsum, dolor sit amet
-      consectetur adipisicing elit. Sit, vero! In deleniti ullam animi natus?
-      Eos suscipit nostrum a eaque corporis illo eligendi commodi, quo, ipsum,
-      debitis in soluta quas. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Voluptates, repellendus, laudantium a sit fugiat, ea est mollitia
-      officiis qui aut cupiditate laboriosam. Cupiditate, blanditiis illo?
-      Aspernatur, porro qui. Obcaecati, quia!
-    </p>
+    <img src="{% static publicacion.imagen.url %}" />
+    <h3>{{publicacion.titulo_publicacion}}</h3>
+    <p>{{publicacion.descripcion_publicacion}}</p>
   </div>
-  <div class="articulo">
-    <img src="{% static 'img/torre.jpg'%}" />
-    <h3>Discapacidad</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur,
-      magnam libero quas a rem velit? Provident a ab, pariatur neque sapiente
-      similique totam recusandae, nisi exercitationem repellendus perferendis.
-      Nemo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-      labore asperiores cum sapiente facilis? Sed ipsum praesentium alias
-      tempore consequatur consectetur, cumque vel temporibus veritatis nemo sunt
-      nostrum labore ipsa.
-    </p>
-  </div>
-  <div class="articulo">
-    <img src="{% static 'img/torre.jpg'%}" />
-    <h3>Discapacidad</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur,
-      magnam libero quas a rem velit? Provident a ab, pariatur neque sapiente
-      similique totam recusandae, nisi exercitationem repellendus perferendis.
-      Nemo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-      labore asperiores cum sapiente facilis? Sed ipsum praesentium alias
-      tempore consequatur consectetur, cumque vel temporibus veritatis nemo sunt
-      nostrum labore ipsa.
-    </p>
-  </div>
-  <div class="articulo">
-    <img src="{% static 'img/torre.jpg'%}" />
-    <h3>Discapacidad</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur,
-      magnam libero quas a rem velit? Provident a ab, pariatur neque sapiente
-      similique totam recusandae, nisi exercitationem repellendus perferendis.
-      Nemo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-      labore asperiores cum sapiente facilis? Sed ipsum praesentium alias
-      tempore consequatur consectetur, cumque vel temporibus veritatis nemo sunt
-      nostrum labore ipsa.
-    </p>
-  </div>
+  {%endfor%}
 </div>
 {% endblock%}

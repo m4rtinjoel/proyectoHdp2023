@@ -16,21 +16,6 @@ class Autor(models.Model):
         verbose_name_plural='Autores'
         ordering=['nombre']
 
-class Resumen(models.Model):
-    id_resumen=models.AutoField(primary_key=True, null=False ,unique=True)
-    autor=models.ForeignKey(Autor, on_delete=models.CASCADE, null=False)
-    sintesis=models.CharField(max_length=10000, null=False)
-    referencias=models.CharField(max_length=1000, null=False)
-    estado=models.BooleanField('Activo/No Activo',null=False,default=True)
-
-    def __str__(self):
-        return self.sintesis
-    
-    class Meta:
-        verbose_name='Resumen'
-        verbose_name_plural='Resumenes'
-        ordering=['sintesis']
-
 class Categoria(models.Model):
     id_categoria=models.AutoField(primary_key=True, null=False, unique=True)
     nombre_categoria=models.CharField(max_length=60, null=False)
@@ -50,7 +35,7 @@ class Publicacion(models.Model):
     categoria=models.ForeignKey(Categoria,on_delete=models.CASCADE, null=False)
     titulo_publicacion=models.CharField(max_length=60, null=False)
     estado_publicacion=models.BooleanField('Activo/No Activo',null=False,default=True)
-    imagen=models.ImageField(null=False)
+    imagen=models.ImageField(upload_to='publicaciones/',null=True)
     descripcion_publicacion=models.CharField(max_length=2000, null=False)
     fecha_creacion=models.DateField( null=False)
 
