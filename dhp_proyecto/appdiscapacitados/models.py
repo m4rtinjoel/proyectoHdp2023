@@ -122,7 +122,7 @@ class DiscapacitadoPorGenero(models.Model):
     class Meta:
         verbose_name='Discapacitado Por Genero'
         verbose_name_plural='Discapacitado Por Genero'
-        ordering=['genero']
+       
 
 class ParticipacionPorDiscapacidad(models.Model):
     id_participacion=models.AutoField(primary_key=True, null=False, unique=True)
@@ -136,4 +136,4 @@ class ParticipacionPorDiscapacidad(models.Model):
     class Meta:
         verbose_name='Participacion Por Discapacidad'
         verbose_name_plural='Participacion Por Discapacidad'
-        ordering=['tipo_discapacidad']
+        
